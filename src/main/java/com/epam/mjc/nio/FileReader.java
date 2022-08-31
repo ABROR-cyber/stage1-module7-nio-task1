@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
 import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -14,7 +15,7 @@ public class FileReader {
     public Profile getDataFromFile(File file) {
         Profile profile = new Profile();
         Path path = Paths.get(file.getPath());
-        try (BufferedReader reader = Files.newBufferedReader(path, Charset.forName("UTF-8"))) {
+        try (BufferedReader reader = Files.newBufferedReader(path, StandardCharsets.UTF_8)) {
 
 
             String currentLine = null;
